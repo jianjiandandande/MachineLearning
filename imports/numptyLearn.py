@@ -160,3 +160,30 @@ i[2][1] = 3782
 print(f)
 print(id(i)==id(f))# id 也不同
 
+## 索引方面的问题
+j = np.sin(np.arange(20)).reshape(5,4)
+print(j)
+ind = j.argmax(axis=0)# 按列查找最大值
+print(ind)# 最后返回的是每一列最大值所对应的下标
+j_max = j[ind,range(j.shape[1])]
+print(j_max)
+
+# 对矩阵进行扩展
+k = np.arange(10,40,10)
+print(k)
+k = np.tile(k,(2,2))# 矩阵的行，列分别复制并叠加在最后
+
+print(k)
+
+## 排序问题
+l = np.array([[4,3,5],[1,2,1]])
+print(l)
+m = np.sort(l,axis=1)#按行的形式进行排序
+print('-----------------')
+print(m)
+n = np.array([4,3,1,2])
+o = np.argsort(n)# 返回n中从小到大值的下标
+print('-----------------')
+print(o)
+print('-----------------')
+print(n[o])
