@@ -69,6 +69,17 @@ print('----------------------')
 titanc_reindexed = new_titanic.reset_index(drop = True)#drop = True表示原来的排序不要了，使用新的排序
 print(titanc_reindexed[0:10])
 
+# 自定义函数， pandas提供的函数不能满足我们的需求，使用自定义函数时需要用到apply函数
+# 1.返回id为100的用户信息
+def hundredth_row(column):
+
+    hundredth_item = column.loc[99]
+    return hundredth_item
+
+hundredth_row = titanc_reindexed.apply(hundredth_row)# 其中调用apply的便是apply中自定义函数的参数
+
+print('第100个数据为:\n',hundredth_row)
+
 
 
 
