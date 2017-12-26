@@ -104,7 +104,7 @@ matrix_w = np.hstack((eig_pairs[0][1].reshape(4,1),
 # 将原始数据转化为n*2维
 Y = X_std.dot(matrix_w)
 
-# [原始四维数据时的点集划分](https://github.com/jianjiandandande/MachineLearning/blob/master/arithmeticLearn/PCA/before_PCA.png)
+# 原始四维数据时的点集划分
 plt.figure(figsize=(6, 4))
 for lab, col in zip(('Iris-setosa', 'Iris-versicolor', 'Iris-virginica'),
                         ('blue', 'red', 'green')):
@@ -118,7 +118,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 
 
-# [PCA降维后数据的点集划分](https://github.com/jianjiandandande/MachineLearning/blob/master/arithmeticLearn/PCA/after_PCA.png)
+# PCA降维后数据的点集划分
 plt.figure(figsize=(6, 4))
 for lab, col in zip(('Iris-setosa', 'Iris-versicolor', 'Iris-virginica'),
                         ('blue', 'red', 'green')):
